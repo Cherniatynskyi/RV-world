@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rv-world/static/css/main.d13dca7e.css",
+    "main.js": "/rv-world/static/js/main.a44e2ef5.js",
+    "index.html": "/rv-world/index.html",
+    "main.d13dca7e.css.map": "/rv-world/static/css/main.d13dca7e.css.map",
+    "main.a44e2ef5.js.map": "/rv-world/static/js/main.a44e2ef5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d13dca7e.css",
+    "static/js/main.a44e2ef5.js"
+  ]
+}
