@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/rv-world/static/css/main.d13dca7e.css",
-    "main.js": "/rv-world/static/js/main.a44e2ef5.js",
+    "main.css": "/rv-world/static/css/main.ba1ac0fb.css",
+    "main.js": "/rv-world/static/js/main.cb19e1e6.js",
+    "static/media/info2.png": "/rv-world/static/media/info2.8e1678e35d76e532bf1e.png",
+    "static/media/info1.png": "/rv-world/static/media/info1.4827c06f85995775a864.png",
+    "static/media/hero.png": "/rv-world/static/media/hero.e4752e85bc029fee7892.png",
+    "static/media/logo2.png": "/rv-world/static/media/logo2.24bd6060327bf6fe29f5.png",
+    "static/media/logo.png": "/rv-world/static/media/logo.be47a6e51dae62358f7e.png",
+    "static/media/sprite.svg": "/rv-world/static/media/sprite.671b04572e578da6a47f2ab2c0323a14.svg",
     "index.html": "/rv-world/index.html",
-    "main.d13dca7e.css.map": "/rv-world/static/css/main.d13dca7e.css.map",
-    "main.a44e2ef5.js.map": "/rv-world/static/js/main.a44e2ef5.js.map"
+    "main.ba1ac0fb.css.map": "/rv-world/static/css/main.ba1ac0fb.css.map",
+    "main.cb19e1e6.js.map": "/rv-world/static/js/main.cb19e1e6.js.map"
   },
   "entrypoints": [
-    "static/css/main.d13dca7e.css",
-    "static/js/main.a44e2ef5.js"
+    "static/css/main.ba1ac0fb.css",
+    "static/js/main.cb19e1e6.js"
   ]
 }
