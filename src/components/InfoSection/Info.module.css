@@ -1,0 +1,34 @@
+.infoList{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.infoItem{
+    display: flex;
+    gap: 40px;
+}
+
+.infoTextWrap{
+    margin-top: 40px;
+}
+
+.infoTextTitle{
+    font-family: 'Lilita One';
+    font-size: 60px;
+}
+
+.infoTextDesc{
+    font-size: 24px;
+    line-height: 36px;
+    margin-top: 20px;
+}
+
+.infoImg{
+    width: 390px;
+    transition: 300ms linear;
+}
+
+.infoImg:hover{
+    transform: scale(1.1);
+}

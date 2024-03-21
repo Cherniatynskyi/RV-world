@@ -29,3 +29,13 @@ ul li {
   list-style: none;
 }
 
+body{
+  background-color: #ffefdb;
+  font-family: 'Inter';
+}
+
+:root{
+  --accentColor: #D04C43;
+  --accentHover: #b8473f
+}
+

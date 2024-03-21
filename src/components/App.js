@@ -1,10 +1,15 @@
 import './App.css';
+import {Route, Routes} from 'react-router-dom'
+import { Layout } from './Layout';
+import { HomePage } from 'pages/HomePage/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+        <Route index element={<HomePage/>}/>
+      </Route>
+    </Routes>
   );
 }
 

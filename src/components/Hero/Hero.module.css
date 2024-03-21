@@ -1,0 +1,36 @@
+.heroWrap{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+
+.heroTitle{
+    font-family: 'Lilita One';
+    font-size: 96px;
+}
+
+.heroThumb{
+    color: var(--accentColor);
+}
+
+.heroBtn{
+    width: 320px;
+    height: 80px;
+    background-color: var(--accentColor);
+    color: white;
+    border-radius: 200px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-top: 20px;
+
+    transition: 200ms linear;
+}
+
+.heroBtn:hover{
+    background-color: var(--accentHover);
+}
+
+.heroImg{
+    width: 826px;
+}
