@@ -11,7 +11,7 @@ export const Layout = () => {
         <NavLink to='/'><img className={css.navLogo} src={logo} alt="" /></NavLink>
         <ul className={css.navList}>
           <NavLink to='/' className={css.navLink}>HOME</NavLink>
-          <NavLink className={css.navLink}>BROWSE</NavLink>
+          <NavLink to="/catalog" className={css.navLink}>BROWSE</NavLink>
           <NavLink className={css.navLink}>FAVORITES</NavLink>
         </ul>
       </nav>

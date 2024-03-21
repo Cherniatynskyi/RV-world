@@ -10,13 +10,13 @@ export const Table = () => {
             <thead>
 
                 <tr>
-                    <th className={css.headerStyle} scope="col" rowspan="3"></th>
-                    <th scope="col" colspan="2">I want to tow my RV</th>
-                    <th className={css.headerStyle} scope="col" colspan="2">I want to drive my RV</th>
+                    <th className={css.headerStyle} scope="col" rowSpan="3"></th>
+                    <th scope="col" colSpan="2">I want to tow my RV</th>
+                    <th className={css.headerStyle} scope="col" colSpan="2">I want to drive my RV</th>
                 </tr> 
                 <tr>
-                    <th scope="col" colspan="2">Provides more flexibility with access to a smaller, secondary car for exploring and more living space.</th>
-                    <th className={css.headerStyle} scope="col" colspan="2">Provides the best rent-and-go option and allows for simplicity when it comes to setting up camp, just shift the RV into park.</th>
+                    <th scope="col" colSpan="2">Provides more flexibility with access to a smaller, secondary car for exploring and more living space.</th>
+                    <th className={css.headerStyle} scope="col" colSpan="2">Provides the best rent-and-go option and allows for simplicity when it comes to setting up camp, just shift the RV into park.</th>
                 </tr> 
                 <tr>
                     <th scope="col">
@@ -112,7 +112,7 @@ export const Table = () => {
                             <button className={css.tableBtn}>Search Class C's</button>
                         </td>
                         <td className={css.headerStyle} >
-                            <p>Often has secondary sleeping spaces like bunk beds and can offer full-size amenities in the kitchen, bedroom, and bathroom</p>
+                            <p>Can offer full-size amenities in the kitchen, bedroom, and bathroom</p>
                             <button className={css.tableBtn}>Search Class A's</button>
                         </td>
                     </tr>
