@@ -1,5 +1,9 @@
 .sidebar{
-    width: 360px;
+    width: 420px;
+    height: 880px;
+    background-color: цршеу;
+    border-radius: 20px;
+    padding: 20px 30px;
 }
 
 .form{
@@ -12,6 +16,30 @@
     border-bottom: 1px solid #1018281A;
     padding-bottom: 20px;
     margin-bottom: 20px;
+
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+
+}
+
+.subtitle{
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: rgb(79, 79, 79);
+  margin-bottom: 10px;
+}
+
+.locationWrap{
+  margin-bottom: 40px;
+}
+
+.select{
+  border: none;
+  background-color: aqua;
 }
 
 .equipWrap{
@@ -85,15 +113,17 @@
   
   
   .container input:checked ~ .checkmark {
-    color: var(--accentColor);
-    stroke: var(--accentColor);
+    background-color: var(--accentColor);
+    color: white;
+    stroke: white;
     border: 1px solid var(--accentColor);
   }
 
   .container input:checked ~ .checkmark2 {
-    fill: var(--accentColor);
-    color: var(--accentColor);
-    stroke: var(--accentColor);
+    background-color: var(--accentColor);
+    color: white;
+    stroke: white;
+    fill: white;
     border: 1px solid var(--accentColor);
   }
 

@@ -10,9 +10,9 @@ export const Layout = () => {
       <nav className={css.nav}>
         <NavLink to='/'><img className={css.navLogo} src={logo} alt="" /></NavLink>
         <ul className={css.navList}>
-          <NavLink to='/' className={css.navLink}>HOME</NavLink>
-          <NavLink to="/catalog" className={css.navLink}>BROWSE</NavLink>
-          <NavLink className={css.navLink}>FAVORITES</NavLink>
+          <NavLink to='/' className={css.navLink}>Home</NavLink>
+          <NavLink to="/catalog" className={css.navLink}>Browse</NavLink>
+          <NavLink className={css.navLink}>Favorites</NavLink>
         </ul>
       </nav>
       <main className={css.main}>
