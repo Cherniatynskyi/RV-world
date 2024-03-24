@@ -30,3 +30,118 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.detailsTitle{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    border-bottom: 1px solid #10182833;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.detailsList{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+
+}
+
+.detailsItem{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.reviewsList{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 20px;
+    width: 50%;
+}
+
+.reviewsMainWrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.reviewsImg{
+    display: flex;
+    background-color: #F2F4F7;
+    color: var(--accentColor);
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    width: 60px;
+    height: 60px;
+
+
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+
+}
+
+.reviewerName{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+}
+
+.reviewsComment{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #475467;
+
+    margin-top: 20px;
+}
+
+.progress {
+    position: absolute;
+    top: 55%;
+    z-index: 1;
+    width: 85px;
+    height: 18px;
+    margin-left: -1px;
+    background-color: #F2F4F7;
+  }
+  
+  .progress .bar {
+    height: 100%;
+    width: 50%;
+    background-color: #FFC531
+  }
+
+
+  .starsList{
+    display: flex;
+    gap: -5px;
+  }
+
+  .equipSvg2{
+    width: 20px;
+    height: 20px;
+    fill: transparent;
+    display: flex;
+    stroke: transparent;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    margin-left: -3px;
+}
+  

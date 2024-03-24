@@ -2,9 +2,12 @@ import { Modal } from 'components/Modal/Modal'
 import sprite from '../../images/sprite.svg'
 import css from './Catalog.module.css'
 import { useState } from 'react'
+import { updateAdvertThunk } from '../../redux/operations'
+import { useDispatch } from 'react-redux'
 
 export const Card =({adv})=> {
   const [isOpen, setIsOpen] = useState(false)
+  const dispatch = useDispatch()
 
   const handleOpenModal = () =>{
     setIsOpen(prev => !prev)
@@ -12,6 +15,12 @@ export const Card =({adv})=> {
 
   const handleCloseModal = () =>{
     setIsOpen(prev => !prev)
+  }
+
+  const handleToggleFavorite = () =>{
+    const {favorite} = adv
+    console.log(adv.id)
+    dispatch(updateAdvertThunk({id: `${adv.id}`, body: {"favorite": `${favorite === "true" ? "false" : "true"}`}}))
   }
 
   return (
@@ -23,8 +32,8 @@ export const Card =({adv})=> {
                   <span className={css.name}>{adv.name}</span>
                   <div>
                     <span className={css.price}>€{adv.price}.00</span>
-                    <button className={css.likeBtn}>
-                      <svg  className={css.subInfoSvg}>
+                    <button onClick={handleToggleFavorite} className={css.likeBtn}>
+                      <svg style={adv.favorite === "true" ? {fill: "red", stroke:"red"}: {}}  className={css.subInfoSvg}>
                         <use href={`${sprite}#icon-heart`}/>
                       </svg>
                     </button>
@@ -62,7 +71,7 @@ export const Card =({adv})=> {
                   </li>
                   <li className={css.equipWrap}>
                     <svg style={{fill: "transparent"}}  className={css.equipSvg}>
-                      <use href={`${sprite}#icon-auto`}/>
+                      <use href={`${sprite}#icon-automatic`}/>
                     </svg>
                     {adv.transmission}
                   </li>

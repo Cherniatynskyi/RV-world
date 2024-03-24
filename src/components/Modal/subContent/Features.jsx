@@ -21,7 +21,7 @@ export const Features =({card})=> {
                   </li>
                   <li className={css.equipWrap}>
                     <svg style={{fill: "transparent"}}  className={css.equipSvg}>
-                      <use href={`${sprite}#icon-auto`}/>
+                      <use href={`${sprite}#icon-automatic`}/>
                     </svg>
                     {card.transmission}
                   </li>
@@ -86,6 +86,35 @@ export const Features =({card})=> {
                   </li>
                   }
         </ul>
+        <div>
+          <h3 className={css.detailsTitle}>Vehicle details</h3>
+          <ul className={css.detailsList}>
+              <li className={css.detailsItem}>
+                <span className={css.detailsText}>Form</span>
+                <span className={css.detailsText}>{card.form}</span>
+              </li>
+              <li className={css.detailsItem}>
+                <span className={css.detailsText}>Length</span>
+                <span className={css.detailsText}>{card.length}</span>
+              </li>
+              <li className={css.detailsItem}>
+                <span className={css.detailsText}>Width</span>
+                <span className={css.detailsText}>{card.width}</span>
+              </li>
+              <li className={css.detailsItem}>
+                <span className={css.detailsText}>Height</span>
+                <span className={css.detailsText}>{card.height}</span>
+              </li>
+              <li className={css.detailsItem}>
+                <span className={css.detailsText}>Tank</span>
+                <span className={css.detailsText}>{card.tank}</span>
+              </li>
+              <li className={css.detailsItem}>
+                <span className={css.detailsText}>Consumption</span>
+                <span className={css.detailsText}>{card.consumption}</span>
+              </li>
+          </ul>
+        </div>
     </div>
   )
 }

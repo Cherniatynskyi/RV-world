@@ -12,7 +12,7 @@ export const Layout = () => {
         <ul className={css.navList}>
           <NavLink to='/' className={css.navLink}>Home</NavLink>
           <NavLink to="/catalog" className={css.navLink}>Browse</NavLink>
-          <NavLink className={css.navLink}>Favorites</NavLink>
+          <NavLink to="/favorites" className={css.navLink}>Favorites</NavLink>
         </ul>
       </nav>
       <main className={css.main}>

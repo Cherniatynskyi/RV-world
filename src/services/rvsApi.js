@@ -12,3 +12,7 @@ export const addAdvert = async (data) => {
 export const deleteAdvert = async (id) => {
     return await axios.delete(`https://65fd67169fc4425c6531dbaa.mockapi.io/adverts/${id}`)
 }
+
+export const updateAdvert = async (id, data) => {
+    return await axios.put(`https://65fd67169fc4425c6531dbaa.mockapi.io/adverts/${id}`, data)
+}

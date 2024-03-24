@@ -1,5 +1,5 @@
 import {createSlice, isAnyOf} from "@reduxjs/toolkit";
-import { getAdvertsThunk, addAdvertThunk, deleteAdvertThunk } from "./operations";
+import { getAdvertsThunk, addAdvertThunk, deleteAdvertThunk, updateAdvertThunk } from "./operations";
 
 const handlePending = (state) => {
     state.isLoading = true
@@ -23,6 +23,14 @@ const handleFulfilledDel = (state,{payload}) => {
     state.error = ''
 }
 
+const handleFulfilledUpd = (state,{payload}) => {
+    state.isLoading = false
+    state.adverts = state.adverts.map(advert =>
+        advert.id === payload.id ? { ...advert, ...payload } : advert
+      );
+}
+
+
 const handleRejected = (state,{payload}) => {
     state.error = payload
     state.isLoading = false
@@ -34,14 +42,23 @@ export const AdvertSlice = createSlice({
     initialState: {
         adverts:[],
         isLoading: false,
-        error: ''
+        error: '',
+        filters: {}
+    },
+    reducers:{
+        setFilter: (state, {payload})=>{
+            state.filters = payload
+        }
     },
     extraReducers:(builder)=>{
         builder
         .addCase(getAdvertsThunk.fulfilled, handleFulfilledGet)
         .addCase(addAdvertThunk.fulfilled, handleFulfilledAdd)
         .addCase(deleteAdvertThunk.fulfilled, handleFulfilledDel)
-        .addMatcher(isAnyOf(getAdvertsThunk.pending, addAdvertThunk.pending, deleteAdvertThunk.pending), handlePending)
-        .addMatcher(isAnyOf(getAdvertsThunk.rejected, addAdvertThunk.rejected, deleteAdvertThunk.rejected), handleRejected)
+        .addCase(updateAdvertThunk.fulfilled, handleFulfilledUpd)
+        .addMatcher(isAnyOf(getAdvertsThunk.pending, addAdvertThunk.pending, deleteAdvertThunk.pending, updateAdvertThunk.pending), handlePending)
+        .addMatcher(isAnyOf(getAdvertsThunk.rejected, addAdvertThunk.rejected, deleteAdvertThunk.rejected, deleteAdvertThunk.rejected), handleRejected)
     }
 })
+
+export const {setFilter} = AdvertSlice.actions

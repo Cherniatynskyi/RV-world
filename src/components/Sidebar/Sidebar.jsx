@@ -4,21 +4,54 @@ import { equipList } from 'utils/equipList'
 import { vehicleType } from 'utils/vehicleType'
 import Select from 'react-select';
 import { useState } from 'react';
+import { setFilter } from '../../redux/advertsSlice';
+import { useDispatch } from 'react-redux';
 
 const options = [
     { value: 'kyiv', label: 'Kyiv' },
     { value: 'lviv', label: 'Lviv' },
-    { value: 'odessa', label: 'Odessa' },
+    { value: 'odesa', label: 'Odesa' },
     { value: 'kharkiv', label: 'Kharkiv' },
+    { value: 'dnipro', label: 'Dnipro' },
+    { value: 'sumy', label: 'Sumy' },
+    { value: 'poltava', label: 'Poltava' },
   ];
 
 export const Sidebar =() =>{
-    const [selectedOption, setSelectedOption] = useState(null);
-  return (
+    const [selectedOption, setSelectedOption] = useState(options[0])
+    const [equip, setEquip] = useState([]);
+    const [vehicle, setVehicle] = useState(null);
+    const dispatch = useDispatch()
+
+    const handleEquipChange =(e)=> {
+        if(equip.includes(e.target.value)){
+            setEquip(prev => prev.filter(val=> val !== e.target.value))
+            return
+        }
+        setEquip(prev => [...prev, e.target.value])
+    }
+
+    const handleVehicleChange = (e) =>{
+        setVehicle(e.target.value)
+    }
+
+    const handleSubmit= (e)=>{
+        e.preventDefault();
+        const filters = {
+            location: selectedOption.label,
+            equip,
+            vehicle
+        }
+        dispatch(setFilter(filters))
+    }
+
+
+    return (
     <div className={css.sidebar}>
         <div className={css.locationWrap}>
             <p className={css.subtitle}>Location</p>
             <Select
+            required
             defaultValue={selectedOption}
             onChange={setSelectedOption}
             options={options}
@@ -38,7 +71,7 @@ export const Sidebar =() =>{
         </div>
         <div>
             <p className={css.subtitle}>Filters</p>
-            <form action="">
+            <form onSubmit={(e)=>handleSubmit(e)}>
             <fieldset className={css.form}>
                 <legend className={css.formTitle}>Vehicle equipment</legend>
                     <div className={css.equipWrap}>
@@ -49,6 +82,7 @@ export const Sidebar =() =>{
                                         type="checkbox"
                                         name="equip" 
                                         value={eqp.value}
+                                        onChange={(e)=>handleEquipChange(e)}
                                     />
                                     <div className={css.checkmark}>
                                         <svg className={css.svg}>
@@ -72,6 +106,8 @@ export const Sidebar =() =>{
                                         type="radio"
                                         name="equip" 
                                         value={vhc.value}
+                                        onChange={(e)=>handleVehicleChange(e)}
+                                        required
                                     />
                                     <div className={css.checkmark2}>
                                         <svg className={css.svg}>

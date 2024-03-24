@@ -3,6 +3,8 @@ import css from './Modal.module.css'
 import sprite from '../../images/sprite.svg'
 import { useState } from 'react'
 import { Features } from './subContent/Features'
+import { Form } from './subContent/Form/Form'
+import { Reviews } from './subContent/Reviews'
 
 export const ModalContent =({card})=> {
     const [subType, setSubType] = useState("features")
@@ -52,8 +54,8 @@ export const ModalContent =({card})=> {
                 <button onClick={(e)=>handleSubType(e)} style={subType === "reviews" ?{color: "#d04c42", borderBottom: "3px solid #d04c42"}:{}} className={css.modalNavBtn} id="reviews">Reviews</button>
             </div>
             <div className={css.subWrap}>
-                {subType === 'features' ? <Features card={card}></Features> : <div>REVIEWS</div>}
-                <form>asdasd</form>
+                {subType === 'features' ? <Features card={card}/> : <Reviews reviews={card.reviews}/>}
+                <Form></Form>
             </div>
         </div>
     </div>
