@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux'
 
 export const Card =({adv})=> {
   const [isOpen, setIsOpen] = useState(false)
+  const [isFavorite, setIsFavorite] = useState(adv.favorite)
   const dispatch = useDispatch()
 
   const handleOpenModal = () =>{
@@ -19,7 +20,7 @@ export const Card =({adv})=> {
 
   const handleToggleFavorite = () =>{
     const {favorite} = adv
-    console.log(adv.id)
+    isFavorite === "false" ? setIsFavorite("true") : setIsFavorite('false')
     dispatch(updateAdvertThunk({id: `${adv.id}`, body: {"favorite": `${favorite === "true" ? "false" : "true"}`}}))
   }
 
@@ -33,7 +34,7 @@ export const Card =({adv})=> {
                   <div>
                     <span className={css.price}>€{adv.price}.00</span>
                     <button onClick={handleToggleFavorite} className={css.likeBtn}>
-                      <svg style={adv.favorite === "true" ? {fill: "red", stroke:"red"}: {}}  className={css.subInfoSvg}>
+                      <svg style={(isFavorite === "true") ? {fill: "red", stroke:"red"}: {}}  className={css.subInfoSvg}>
                         <use href={`${sprite}#icon-heart`}/>
                       </svg>
                     </button>

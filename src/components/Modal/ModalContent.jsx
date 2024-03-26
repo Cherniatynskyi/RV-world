@@ -18,7 +18,7 @@ export const ModalContent =({card})=> {
 
     return (
     <div className={css.modalContent}>
-        <div className={css.mainContetn}>
+        <div className={css.mainContent}>
             <div className={css.modalHeaderInfo}>
                 <h2>{card.name}</h2>
                 <div className={css.subInfo}>

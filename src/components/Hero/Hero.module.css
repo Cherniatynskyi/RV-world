@@ -15,12 +15,16 @@
 }
 
 .heroBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 300px;
     height: 70px;
     background-color: var(--accentColor);
     color: white;
     border-radius: 200px;
     font-size: 20px;
+    font-weight: 700;
     cursor: pointer;
     margin-top: 20px;
 

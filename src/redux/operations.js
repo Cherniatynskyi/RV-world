@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import {Notify} from 'notiflix';
 import { getAdverts, addAdvert, deleteAdvert, updateAdvert } from "services/rvsApi";
 
 export const getAdvertsThunk = createAsyncThunk('adverts/getAdverts', async()=>{
@@ -16,6 +17,7 @@ export const deleteAdvertThunk = createAsyncThunk('adverts/deleteAdvert', async(
 })
 
 export const updateAdvertThunk = createAsyncThunk('adverts/updateAdvert', async({id, body})=>{
-    const contacts = await updateAdvert(id, body);
-    return contacts.data
+    const advert = await updateAdvert(id, body);
+    advert.data.favorite === "true" ? Notify.success(`Item added to favorites list`) : Notify.success(`Item removed from favorites list`);;
+    return advert.data
 })

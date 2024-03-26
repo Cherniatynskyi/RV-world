@@ -26,6 +26,19 @@
     height: 90vh;
 }
 
+.modalContent::-webkit-scrollbar{
+    width: 10px;
+    -webkit-appearance: none;
+}
+
+.modalContent::-webkit-scrollbar-thumb{
+    border-radius: 20px;
+    background-color: var(--accentColor);
+    width: 3px;
+}
+
+
+
 .catalogInfoWrap{
     width: 100%;
 }
